@@ -11,22 +11,45 @@
 }
 
 .header {
-    margin-top: 0.5rem;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
     height: 65px;
     background: #fff;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);    
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);  
+    background-color: #63B0CD; 
+    padding: 0 20px;
+    
+     
 }
 
 .content{
     display: flex;
     gap: 4rem;
+    text-decoration: none;
 }
 
 .redesSociais{
     display: flex;
     gap: 0.5rem;
 }	
+
+.PagInicial{    
+    text-decoration: none;
+    font-size: 1.7rem;
+    color: #fff;
+}
+
+.About{
+  text-decoration: none;
+  font-size: 1.7rem;
+  color: #fff;
+}
+
+.Pokedex{
+  text-decoration: none;
+  font-size: 1.7rem;
+  color: #fff;
+}

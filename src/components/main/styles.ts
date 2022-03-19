@@ -7,7 +7,7 @@ export const Content = styled.ul`
   align-items: center;
   grid-gap: 1rem;
   padding: 1rem;
-  margin-top: 9rem;  
+  margin: 2rem 2rem;  
 `;
 
 export const Main = styled.main`

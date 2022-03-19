@@ -26,4 +26,8 @@ interface PokemonProps {
   ];
 }
 
-export type { nameAndUrl, Url, PokemonProps, PokemonTypes };
+interface PokemonstaticProps {
+  pokemonstaticprops: PokemonProps[];
+}
+
+export type { nameAndUrl, Url, PokemonProps, PokemonTypes,PokemonstaticProps };

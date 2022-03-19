@@ -9,18 +9,18 @@ import styles from "./styles.module.css";
 export default function Header() {
   return (
     <header className={styles.header}>
-      <Image width="65px" height="65px" src={image} alt="pokelogo" />
+      <Image width="57px" height="57px" src={image} alt="pokelogo" />
       <div className={styles.content}>
-        <span>Página Inicial</span>
-        <span>Pokedex</span>
-        <span>Sobre</span>
+        <Link href="/"><a className={styles.PagInicial}>Página Inicial</a></Link>
+        <Link href="/Pokedex/about"><a className={styles.About}>Sobre</a></Link>
+        <Link href="/Pokedex"><a className={styles.Pokedex} >Pokedex</a></Link>
       </div>
       <div className={styles.redesSociais}>
         <Link href="https://github.com/ThiagoMaurat">
           <Image
             className={styles.github}
-            width="65px"
-            height="65px"
+            width="57px"
+            height="57px"
             src={github}
             alt="github"
           />
@@ -28,8 +28,8 @@ export default function Header() {
         <Link href="https://www.linkedin.com/in/thiago-maurat-477a041b9/">
           <Image
             className={styles.linkedinho}
-            width="65px"
-            height="65px"
+            width="57px"
+            height="57px"
             src={linkedin}
             alt="Linkedinho"
           />
