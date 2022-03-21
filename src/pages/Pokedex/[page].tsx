@@ -24,7 +24,8 @@ export default function Pokedex(pokemonstaticprops: pokAndTotalPages) {
   for (var i = 0; i < pokemonstaticprops.totalPages; i++) {
     pages.push(i);
   }
-
+  pages.shift();
+  console.log(pages);
   return (
     <>
       <Header />
