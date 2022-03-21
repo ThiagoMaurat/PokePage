@@ -15,6 +15,7 @@ function Home(pokemonstaticprops: PokemonstaticProps) {
       <MainContent>
         {pokemonstaticprops.pokemonstaticprops.map(
           (pokemonstaticprops, index) => (
+            console.log(pokemonstaticprops),
             <Card
               pokemon={pokemonstaticprops}
               key={index}

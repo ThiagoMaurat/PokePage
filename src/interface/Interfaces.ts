@@ -7,8 +7,8 @@ interface Url {
   url: string;
 }
 
-interface PokemonTypes {  
-  [key: string]: string;      
+interface PokemonTypes {
+  [key: string]: string;
 }
 
 interface PokemonProps {
@@ -17,12 +17,19 @@ interface PokemonProps {
   sprites: {
     front_default: string;
   };
-  types?: [
+  types: [
     {
       type: {
         name: string;
-      }
+      };
+
+    },
+    {
+      type: {
+        name: string;
+      };
     }
+    
   ];
 }
 
@@ -30,4 +37,4 @@ interface PokemonstaticProps {
   pokemonstaticprops: PokemonProps[];
 }
 
-export type { nameAndUrl, Url, PokemonProps, PokemonTypes,PokemonstaticProps };
+export type { nameAndUrl, Url, PokemonProps, PokemonTypes, PokemonstaticProps };

@@ -6,7 +6,7 @@ interface Props {
   img: string;
 }
 
-export const Card = ({ img, pokemon }: Props): JSX.Element => {
+export const Card = ({ img, pokemon }: Props) => {
   return (
     <LiContent>
       <Pokeimg src={img} />
@@ -21,8 +21,8 @@ export const Card = ({ img, pokemon }: Props): JSX.Element => {
             pokemon.types[0].type.name.slice(1)}
         </ColorType>
         <ColorType2 pokemon={pokemon}>
-           {pokemon.types[1] && pokemon.types[1]?.type.name.charAt(0).toUpperCase() +
-            pokemon.types[1]?.type.name.slice(1)}
+           {pokemon.types[1] && pokemon.types[1].type.name.charAt(0).toUpperCase() +
+            pokemon.types[1].type.name.slice(1)}
         </ColorType2>
       </Informacoes>
     </LiContent>
