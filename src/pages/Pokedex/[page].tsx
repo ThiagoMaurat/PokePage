@@ -20,8 +20,7 @@ export default function Pokedex(pokemonstaticprops: pokAndTotalPages) {
   const router = useRouter();
   const { page } = router.query;
   const currentPage = Number(page);
-  const pages: number[] = [];
-  console.log(pages);  
+  const pages: number[] = [];  
   for (var i = 0; i < pokemonstaticprops.totalPages; i++) {
     pages.push(i);
   }

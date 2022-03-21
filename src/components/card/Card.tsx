@@ -36,14 +36,4 @@ export const Card = ({ img, pokemon }: Props) => {
   );
 };
 
-{
-  /* <ColorType pokemon={pokemon}>
-          Tipo:{" "}
-          {pokemon.types
-            .map(
-              (type) =>
-                type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1)                 
-            )
-            .join(" ")}
-        </ColorType> */
-}
+
