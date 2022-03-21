@@ -9,13 +9,15 @@ import styles from "./styles.module.css";
 export default function Header() {
   return (
     <header className={styles.header}>
+      <div className={styles.logo}>
       <Image width="57px" height="57px" src={image} alt="pokelogo" />
+      </div>
       <div className={styles.content}>
         <Link href="/">
-          <a className={styles.PagInicial}>Página Inicial</a>
+          <a className={styles.PagInicial}>Home</a>
         </Link>
         <Link href="/Pokedex/about">
-          <a className={styles.About}>Sobre</a>
+          <a className={styles.About}>About</a>
         </Link>
         <Link href="/Pokedex/1">
           <a className={styles.Pokedex}>Pokedex</a>

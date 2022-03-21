@@ -6,11 +6,20 @@ import Header from "../components/header/Header";
 import { MainContent } from "../components/main/MainContent";
 import SeeAllPokemonsButtom from "../components/SeeAllPokemonsButton";
 import { nameAndUrl, PokemonstaticProps } from "../interface/Interfaces";
+import Image from "next/image";
+import pokeBanner from "../assets/PokeBanner.jpg";
+import { Divhomestyle } from "../styles/homestyles";
 
 function Home(pokemonstaticprops: PokemonstaticProps) {
   return (
     <>
       <Header />
+      <div style={{overflow: "hidden"}}>
+        <Image src={pokeBanner} alt="PokeBanner" layout="responsive" />
+      </div>
+      <Divhomestyle>
+      <SeeAllPokemonsButtom />
+      </Divhomestyle>
       <MainContent>
         {pokemonstaticprops.pokemonstaticprops.map(
           (pokemonstaticprops, index) => (
@@ -45,17 +54,3 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export default Home;
 
-/* useEffect(() => {
-  console.log(pokemonstaticprops);
-  async function LoadData(): Promise<void> {
-    const api = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=20");
-    const data = api.data.results;
-    const urls = data.map((pokemon: nameAndUrl) => pokemon.url);
-    urls.forEach(async (element: string) => {
-      const Poke = await axios.get(element);
-      const poke = Poke.data;
-      setPokemon((prevState) => [...prevState, poke]);
-    });
-  }
-  LoadData();
-}, []); */

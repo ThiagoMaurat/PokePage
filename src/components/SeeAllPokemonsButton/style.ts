@@ -8,4 +8,5 @@ export const SeeAllPokemonsButton = styled.button`
     font-size: 1.2rem;
     font-weight: bold;
     padding: 0.5rem 1rem;
+    cursor: pointer;
 `

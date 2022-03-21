@@ -26,6 +26,7 @@
   display: flex;
   gap: 4rem;
   text-decoration: none;
+  
 }
 
 .redesSociais {
@@ -49,4 +50,16 @@
   text-decoration: none;
   font-size: 1.7rem;
   color: #fff;
+}
+
+@media (max-width: 420px) {
+  .content {
+    gap: 0.5rem;
+  }
+  .logo{
+    display: none;
+  }
+  .redesSociais{
+    display: none;
+  }
 }

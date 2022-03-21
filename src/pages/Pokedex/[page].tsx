@@ -8,6 +8,8 @@ import Header from "../../components/header/Header";
 import { MainContent } from "../../components/main/MainContent";
 import Pagination from "../../components/pagination";
 import { nameAndUrl, PokemonProps } from "../../interface/Interfaces";
+import Image from "next/image";
+import pokeBanner from "../../assets/PokeBanner.jpg";
 
 interface pokAndTotalPages {
   pokemonstaticprops: PokemonProps[];
@@ -18,15 +20,18 @@ export default function Pokedex(pokemonstaticprops: pokAndTotalPages) {
   const router = useRouter();
   const { page } = router.query;
   const currentPage = Number(page);
-
-  const pages = [];
+  const pages: number[] = [];
+  console.log(pages);  
   for (var i = 0; i < pokemonstaticprops.totalPages; i++) {
-    pages.push(i + 1);
+    pages.push(i);
   }
 
   return (
     <>
       <Header />
+      <div style={{overflow: "hidden"}}>
+        <Image src={pokeBanner} alt="PokeBanner" layout="responsive" />
+      </div>
       <MainContent>
         {pokemonstaticprops.pokemonstaticprops.map((content) => (
           <Card
@@ -60,7 +65,6 @@ export async function getStaticPaths() {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const page = Number(params?.page ?? 0);
-  console.log(page);
   const response = await axios.get(
     `https://pokeapi.co/api/v2/pokemon/?offset=${page * 20}&limit=20`
   );
