@@ -8,8 +8,6 @@ import { MainContent } from "../components/main/MainContent";
 import { nameAndUrl, PokemonstaticProps } from "../interface/Interfaces";
 
 function Home(pokemonstaticprops: PokemonstaticProps) {
-  const [pokemon, setPokemon] = useState<PokemonstaticProps[]>([]);
-
 
   return (
     <>

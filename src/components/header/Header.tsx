@@ -13,7 +13,7 @@ export default function Header() {
       <div className={styles.content}>
         <Link href="/"><a className={styles.PagInicial}>Página Inicial</a></Link>
         <Link href="/Pokedex/about"><a className={styles.About}>Sobre</a></Link>
-        <Link href="/Pokedex"><a className={styles.Pokedex} >Pokedex</a></Link>
+        <Link href="/Pokedex/[page]"><a className={styles.Pokedex} >Pokedex</a></Link>
       </div>
       <div className={styles.redesSociais}>
         <Link href="https://github.com/ThiagoMaurat">

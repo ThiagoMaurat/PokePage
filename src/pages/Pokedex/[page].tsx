@@ -1,14 +1,30 @@
 import axios from "axios";
 import { GetStaticProps } from "next";
 import React from "react";
-import Footer from "../components/footer/Footer";
-import Header from "../components/header/Header";
-import { nameAndUrl } from "../interface/Interfaces";
+import { Card } from "../../components/card/Card";
+import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/Header";
+import { MainContent } from "../../components/main/MainContent";
+import { nameAndUrl, PokemonProps, PokemonstaticProps } from "../../interface/Interfaces";
 
-export default function Pokedex() {
+interface pokAndTotalPages {
+  pokemonstaticprops: PokemonProps[];
+  totalPages: number;
+}
+
+export default function Pokedex(pokemonstaticprops: pokAndTotalPages) {
   return (
     <>
       <Header />
+      <MainContent>
+        {pokemonstaticprops.pokemonstaticprops.map((content) => (
+          <Card
+            pokemon={content}
+            key={content.id}
+            img={content.sprites.front_default}
+          />
+        ))}
+      </MainContent>
       <Footer />
     </>
   );
@@ -23,7 +39,6 @@ export async function getStaticPaths() {
   const paths = [];
   for (let i = 0; i < pages; i++) {
     paths.push({ params: { page: `${i + 1}` } });
-    console.log(paths);
   }
   return {
     paths,
@@ -33,6 +48,7 @@ export async function getStaticPaths() {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const page = Number(params?.page ?? 0);
+  console.log(page);
   const response = await axios.get(
     `https://pokeapi.co/api/v2/pokemon/?offset=${page * 20}&limit=20`
   );
