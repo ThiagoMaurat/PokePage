@@ -22,14 +22,12 @@ interface PokemonProps {
       type: {
         name: string;
       };
-
     },
     {
       type: {
         name: string;
       };
     }
-    
   ];
 }
 

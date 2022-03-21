@@ -1,21 +1,19 @@
 import axios from "axios";
 import type { GetStaticProps } from "next";
-import { useEffect, useState } from "react";
 import { Card } from "../components/card/Card";
 import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
 import { MainContent } from "../components/main/MainContent";
+import SeeAllPokemonsButtom from "../components/SeeAllPokemonsButton";
 import { nameAndUrl, PokemonstaticProps } from "../interface/Interfaces";
 
 function Home(pokemonstaticprops: PokemonstaticProps) {
-
   return (
     <>
       <Header />
       <MainContent>
         {pokemonstaticprops.pokemonstaticprops.map(
           (pokemonstaticprops, index) => (
-            console.log(pokemonstaticprops),
             <Card
               pokemon={pokemonstaticprops}
               key={index}

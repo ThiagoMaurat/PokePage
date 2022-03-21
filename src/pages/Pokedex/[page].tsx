@@ -1,11 +1,13 @@
 import axios from "axios";
 import { GetStaticProps } from "next";
+import { useRouter } from "next/router";
 import React from "react";
 import { Card } from "../../components/card/Card";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import { MainContent } from "../../components/main/MainContent";
-import { nameAndUrl, PokemonProps, PokemonstaticProps } from "../../interface/Interfaces";
+import Pagination from "../../components/pagination";
+import { nameAndUrl, PokemonProps } from "../../interface/Interfaces";
 
 interface pokAndTotalPages {
   pokemonstaticprops: PokemonProps[];
@@ -13,6 +15,15 @@ interface pokAndTotalPages {
 }
 
 export default function Pokedex(pokemonstaticprops: pokAndTotalPages) {
+  const router = useRouter();
+  const { page } = router.query;
+  const currentPage = Number(page);
+
+  const pages = [];
+  for (var i = 0; i < pokemonstaticprops.totalPages; i++) {
+    pages.push(i + 1);
+  }
+
   return (
     <>
       <Header />
@@ -25,6 +36,7 @@ export default function Pokedex(pokemonstaticprops: pokAndTotalPages) {
           />
         ))}
       </MainContent>
+      <Pagination currentPage={currentPage} pages={pages}></Pagination>
       <Footer />
     </>
   );

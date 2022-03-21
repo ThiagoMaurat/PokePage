@@ -1,5 +1,11 @@
 import { PokemonProps } from "../../interface/Interfaces";
-import { ColorType, ColorType2, Informacoes, LiContent, Pokeimg } from "./styles";
+import {
+  ColorType,
+  ColorType2,
+  Informacoes,
+  LiContent,
+  Pokeimg,
+} from "./styles";
 
 interface Props {
   pokemon: PokemonProps;
@@ -21,8 +27,9 @@ export const Card = ({ img, pokemon }: Props) => {
             pokemon.types[0].type.name.slice(1)}
         </ColorType>
         <ColorType2 pokemon={pokemon}>
-           {pokemon.types[1] && pokemon.types[1].type.name.charAt(0).toUpperCase() +
-            pokemon.types[1].type.name.slice(1)}
+          {pokemon.types[1] &&
+            pokemon.types[1].type.name.charAt(0).toUpperCase() +
+              pokemon.types[1].type.name.slice(1)}
         </ColorType2>
       </Informacoes>
     </LiContent>

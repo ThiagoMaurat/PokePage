@@ -8,7 +8,7 @@ type Props = {
   children?: React.ReactChild | React.ReactChild[];
 };
 
-export const MainContent = ({ children }: Props) => {
+export const MainContent = ({ children }: Props): JSX.Element => {
   return (
     <>
       <div className={styles.banner}>

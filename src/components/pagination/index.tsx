@@ -12,7 +12,7 @@ export default function Pagination({ currentPage, pages }: IPaginationProps) {
   return (
     <S.Pagination>
       <S.Pages>
-        {!(currentPage > 1) && (
+        {!(currentPage >= 1) && (
           <Link href={`/?page=${currentPage - 1}`}>
             <a className="prev">&lt;</a>
             <span className="previous">
@@ -20,7 +20,7 @@ export default function Pagination({ currentPage, pages }: IPaginationProps) {
             </span>
           </Link>
         )}
-         {currentPage >= 5 && (
+        {currentPage >= 5 && (
           <>
             <Link href={`${pages.length - (pages.length - 1)}`}>
               <a className="page">{pages.length - (pages.length - 1)}</a>
@@ -37,7 +37,7 @@ export default function Pagination({ currentPage, pages }: IPaginationProps) {
                     {page}
                   </a>
                 </Link>
-              )
+              );
             })
           : pages.slice(0, 5).map((page) => {
               return (
@@ -46,7 +46,7 @@ export default function Pagination({ currentPage, pages }: IPaginationProps) {
                     {page}
                   </a>
                 </Link>
-              )
+              );
             })}
 
         {currentPage <= pages.length - 5 && (

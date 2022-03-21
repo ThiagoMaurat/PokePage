@@ -1,11 +1,11 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Pagination = styled.section`
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 
 export const Pages = styled.div`
   display: flex;
@@ -53,4 +53,4 @@ export const Pages = styled.div`
       background: var(--primary);
     }
   }
-`
+`;
