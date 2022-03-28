@@ -50,7 +50,7 @@ export const Informacoes = styled.div`
 
 export const Pokeimg = styled.img`
   width: 100%;
-  height: auto;
+  height: 12rem;
   margin: 0 auto;
 `;
 

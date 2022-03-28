@@ -37,7 +37,7 @@ export default function Pokedex(pokemonstaticprops: pokAndTotalPages) {
           <Card
             pokemon={content}
             key={content.id}
-            img={content.sprites.front_default}
+            img={content.sprites.other.dream_world.front_default}
           />
         ))}
       </MainContent>

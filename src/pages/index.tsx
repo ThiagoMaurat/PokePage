@@ -23,10 +23,11 @@ function Home(pokemonstaticprops: PokemonstaticProps) {
       <MainContent>
         {pokemonstaticprops.pokemonstaticprops.map(
           (pokemonstaticprops, index) => (
+            console.log(pokemonstaticprops),
             <Card
               pokemon={pokemonstaticprops}
               key={index}
-              img={pokemonstaticprops.sprites.front_default}
+              img={pokemonstaticprops.sprites.other.dream_world.front_default}
             />
           )
         )}
@@ -54,3 +55,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export default Home;
 
+/* 
+home:
+front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/8.png"
+front_female: null
+front_shiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/8.png"
+front_shiny_female: null
+[[Prototype]]: Object
+official-artwork:
+front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png"
+[[Prototype]]: Object */
